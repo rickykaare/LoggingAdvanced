@@ -156,7 +156,7 @@ namespace LoggingAdvanced.Console
                     GetScopeInformation(logBuilder);
 
                 // message
-                logBuilder.Append(_messagePadding);
+                if (Settings.IncludeLineBreak) logBuilder.Append(_messagePadding);
                 var len = logBuilder.Length;
                 logBuilder.AppendLine(message);
                 logBuilder.Replace(Environment.NewLine, _newLineWithMessagePadding, len, message.Length);
